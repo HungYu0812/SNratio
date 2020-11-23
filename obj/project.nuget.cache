@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "pua/AgYDjMdCOw2C8Wivo3/XU/6uubzcCmInW+gvtbSKE6OaLzBqESqz+KdYhtvLzE1koOdFsQX/F74s2Sx1oQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\陳鴻羽\\Desktop\\SNratio\\SNratio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\陳鴻羽\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\陳鴻羽\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\陳鴻羽\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
