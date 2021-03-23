@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "pua/AgYDjMdCOw2C8Wivo3/XU/6uubzcCmInW+gvtbSKE6OaLzBqESqz+KdYhtvLzE1koOdFsQX/F74s2Sx1oQ==",
+  "dgSpecHash": "KIfxe6Lk1OZAr3T3BmPMIFbw9uT4YxHuvX6+uEs6Ra79o7Nh7g8JJG7udVJhX+tJsG+6Uzgl3JqGNk89Wi2+Mw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\陳鴻羽\\Desktop\\SNratio\\SNratio.csproj",
+  "projectFilePath": "D:\\Github\\SNratio\\SNratio.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\陳鴻羽\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
-    "C:\\Users\\陳鴻羽\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
-    "C:\\Users\\陳鴻羽\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512"
+    "C:\\Users\\HungYu\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\HungYu\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\HungYu\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

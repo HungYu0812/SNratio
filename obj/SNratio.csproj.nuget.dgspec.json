@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\陳鴻羽\\Desktop\\SNratio\\SNratio.csproj": {}
+    "D:\\Github\\SNratio\\SNratio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\陳鴻羽\\Desktop\\SNratio\\SNratio.csproj": {
+    "D:\\Github\\SNratio\\SNratio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\陳鴻羽\\Desktop\\SNratio\\SNratio.csproj",
+        "projectUniqueName": "D:\\Github\\SNratio\\SNratio.csproj",
         "projectName": "SNratio",
-        "projectPath": "C:\\Users\\陳鴻羽\\Desktop\\SNratio\\SNratio.csproj",
-        "packagesPath": "C:\\Users\\陳鴻羽\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\陳鴻羽\\Desktop\\SNratio\\obj\\",
+        "projectPath": "D:\\Github\\SNratio\\SNratio.csproj",
+        "packagesPath": "C:\\Users\\HungYu\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\SNratio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\陳鴻羽\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HungYu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
