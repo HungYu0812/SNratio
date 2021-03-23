@@ -154,9 +154,9 @@ namespace SNratio
             int percentSigEnd = Int32.Parse(Console.ReadLine());
             string filePath = @".\" + inputName + @"\";
             string outputFileName = inputName + @"_" + percentSigSta.ToString() + @"_" + percentSigEnd.ToString() + @".txt";
-            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();//引用stopwatch物件
-            sw.Reset();//碼表歸零
-            sw.Start();//碼表開始計時
+            System.Diagnostics.Stopwatch clock = new System.Diagnostics.Stopwatch();//引用stopwatch物件
+            clock.Reset();//碼表歸零
+            clock.Start();//碼表開始計時
             double[] sigAvg = SSS(filePath, percentSigSta, percentSigEnd);
             double[] backAvg = BBB(filePath);
             using (StreamWriter sw = new StreamWriter(outputFileName))
@@ -169,8 +169,8 @@ namespace SNratio
                 }
             }
             //foreach (int x in bnswer) { Console.WriteLine(x); }
-            sw.Stop();
-            string result1 = sw.Elapsed.TotalMilliseconds.ToString();
+            clock.Stop();
+            string result1 = clock.Elapsed.TotalMilliseconds.ToString();
             Console.WriteLine("Done!!!It takes {0} ms!", result1);
             Console.ReadLine();
         }
