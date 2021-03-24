@@ -35,8 +35,8 @@ namespace SNratio
                 Bitmap myBitmap = new Bitmap(image);
                 int[] signal = new int[myBitmap.Width * myBitmap.Height];
                 int number = 0;
-                /*
-                for (int Xcount = 0; Xcount < myBitmap.Width; Xcount++)
+
+                /*for (int Xcount = 0; Xcount < myBitmap.Width; Xcount++)
                 {
                     for (int Ycount = 0; Ycount < myBitmap.Height; Ycount++)
                     {
@@ -44,7 +44,6 @@ namespace SNratio
                         if (pixelColor.R > 0)
                         {
                             signal[Xcount + myBitmap.Width * Ycount] = pixelColor.R;
-                            number++;
                         }
                     }
                 }*/
@@ -104,19 +103,17 @@ namespace SNratio
                 BitmapData bmpData = myBitmap.LockBits(new Rectangle(0, 0, myBitmap.Width, myBitmap.Height), ImageLockMode.ReadOnly, myBitmap.PixelFormat);
                 Parallel.For(0, width, Xcount =>
                  {
-                     for (int Ycount = 0; Ycount < height; Ycount++)
+                     Parallel.For(0, height, Ycount =>
                      {
                          int offset = Xcount * bmpData.Stride + Ycount * (bmpData.Stride / bmpData.Width);
                          int r = Marshal.ReadByte(bmpData.Scan0, offset + 2);
                          if (r > 0)
                          {
                              signal[Xcount + width * Ycount] = r;
-                             number++;
                          }
-                     }
+                     });
                  });
-                /*
-                for (int Xcount = 0; Xcount < myBitmap.Width; Xcount++)
+                /*for (int Xcount = 0; Xcount < myBitmap.Width; Xcount++)
                 {
                     for (int Ycount = 0; Ycount < myBitmap.Height; Ycount++)
                     {
@@ -129,6 +126,15 @@ namespace SNratio
                     }
                 }*/
                 Array.Sort(signal);
+                for (int index = signal.Length - 1; index > 0; index--)
+                {
+                    if (signal[index] > 0)
+                    {
+                        number++;
+                    }
+                    else { break; }
+                }
+
                 double acc = 0;
                 for (int j = 0; j < signal.Length; j++)
                 {
