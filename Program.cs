@@ -10,6 +10,17 @@ namespace SNratio
 {
     class Program
     {
+        private static double averageNum(int[] array)
+        {
+            int acc = 0;
+            int count = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                acc += array[i];
+                count++;
+            }
+            return acc / count;
+        }
         private static double averageRealSignal(int[] array, int start, int end)
         {
             int acc = 0;
@@ -17,10 +28,23 @@ namespace SNratio
             {
                 acc = acc + array[i];
             }
-            double output = Convert.ToDouble(acc) / Convert.ToDouble((end - start));
+            // double output = Convert.ToDouble(acc) / Convert.ToDouble((end - start));
+            int threshold = ((acc / (end - start)) + array[0]) / 2;
+            int real_acc = 0;
+            int real_num = 0;
+            for (int i = array.Length - end; i < array.Length - start; i++)
+            {
+                if (array[i] >= threshold)
+                {
+                    real_acc = real_acc + array[i];
+                    real_num++;
+                }
+                else { Console.Write("Some fake signal, the signal value: {0}\n", array[i]); }
+            }
+            double output = Convert.ToDouble(real_acc) / Convert.ToDouble(real_num);
             return output;
         }
-        private static double[] SSS(string sourceFilePath, int percentSta, int percentEnd)
+        private static double[] SSS(string sourceFilePath, int percentSta, int percentEnd, int totalPieces)
         {
             string filePath = sourceFilePath + @"ClearOutside.tif";
             Image image = Image.FromFile(filePath);
@@ -35,19 +59,6 @@ namespace SNratio
                 Bitmap myBitmap = new Bitmap(image);
                 int[] signal = new int[myBitmap.Width * myBitmap.Height];
                 int number = 0;
-
-                /*for (int Xcount = 0; Xcount < myBitmap.Width; Xcount++)
-                {
-                    for (int Ycount = 0; Ycount < myBitmap.Height; Ycount++)
-                    {
-                        Color pixelColor = myBitmap.GetPixel(Xcount, Ycount);
-                        if (pixelColor.R > 0)
-                        {
-                            signal[Xcount + myBitmap.Width * Ycount] = pixelColor.R;
-                        }
-                    }
-                }*/
-
                 int width = myBitmap.Width;
                 int height = myBitmap.Height;
                 BitmapData bmpData = myBitmap.LockBits(new Rectangle(0, 0, myBitmap.Width, myBitmap.Height), ImageLockMode.ReadOnly, myBitmap.PixelFormat);
@@ -73,8 +84,8 @@ namespace SNratio
                     }
                     else { break; }
                 }
-                int realSigNumSta = percentSta * number / 100;
-                int realSigNumEnd = percentEnd * number / 100;
+                int realSigNumSta = percentSta * number / totalPieces;
+                int realSigNumEnd = percentEnd * number / totalPieces;
                 output[i] = averageRealSignal(signal, realSigNumSta, realSigNumEnd);
                 //Color pixelColor = myBitmap.GetPixel(277, 314);
                 Console.Write("Process for real signal: {0}/{1}\n", i, frames);
@@ -113,18 +124,6 @@ namespace SNratio
                          }
                      });
                  });
-                /*for (int Xcount = 0; Xcount < myBitmap.Width; Xcount++)
-                {
-                    for (int Ycount = 0; Ycount < myBitmap.Height; Ycount++)
-                    {
-                        Color pixelColor = myBitmap.GetPixel(Xcount, Ycount);
-                        if (pixelColor.R > 0)
-                        {
-                            signal[Xcount + myBitmap.Width * Ycount] = pixelColor.R;
-                            number++;
-                        }
-                    }
-                }*/
                 Array.Sort(signal);
                 for (int index = signal.Length - 1; index > 0; index--)
                 {
@@ -154,16 +153,18 @@ namespace SNratio
         {
             Console.WriteLine("Enter directory name: ");
             string inputName = Console.ReadLine();
+            Console.WriteLine("How many pieces for total: ");
+            int totalPieces = Int32.Parse(Console.ReadLine());
             Console.WriteLine("How many percentage for signal starting: ");
             int percentSigSta = Int32.Parse(Console.ReadLine());
             Console.WriteLine("How many percentage for signal ending: ");
             int percentSigEnd = Int32.Parse(Console.ReadLine());
             string filePath = @".\" + inputName + @"\";
-            string outputFileName = inputName + @"_" + percentSigSta.ToString() + @"_" + percentSigEnd.ToString() + @".txt";
+            string outputFileName = inputName + @"_" + totalPieces.ToString() + @"_" + percentSigSta.ToString() + @"_" + percentSigEnd.ToString() + @".txt";
             System.Diagnostics.Stopwatch clock = new System.Diagnostics.Stopwatch();//引用stopwatch物件
             clock.Reset();//碼表歸零
             clock.Start();//碼表開始計時
-            double[] sigAvg = SSS(filePath, percentSigSta, percentSigEnd);
+            double[] sigAvg = SSS(filePath, percentSigSta, percentSigEnd, totalPieces);
             double[] backAvg = BBB(filePath);
             using (StreamWriter sw = new StreamWriter(outputFileName))
             {

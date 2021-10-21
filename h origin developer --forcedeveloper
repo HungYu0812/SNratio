@@ -1,0 +1,79 @@
+[33mcommit 9a4a0ade801c15880847a63e4d3d44f8c39e111e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: HungYu0812 <albein3402@gmail.com>
+Date:   Tue Mar 23 22:33:59 2021 +0800
+
+    Parallel
+
+[33mcommit dad9af74794505016aadea49e122ac7b292d1dc9[m
+Merge: 7a2b43a ead0db1
+Author: HungYu0812 <albein3402@gmail.com>
+Date:   Tue Mar 23 22:19:14 2021 +0800
+
+    Merge branch 'master' of https://github.com/HungYu0812/SNratio into master
+
+[33mcommit 7a2b43a5d242414982c856f68ccf0823641d6e95[m
+Author: HungYu0812 <albein3402@gmail.com>
+Date:   Tue Mar 23 22:16:45 2021 +0800
+
+    update
+
+[33mcommit a338bb8af699b2cdc5ba59554e7c0d8f243208fa[m
+Author: HungYu0812 <albein3402@gmail.com>
+Date:   Tue Mar 23 22:13:10 2021 +0800
+
+    Parralell
+
+[33mcommit ead0db1aca1356632251aed2ea9fb15b7e1b19bd[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: HungYu0812 <64835606+HungYu0812@users.noreply.github.com>
+Date:   Sat Dec 12 16:49:21 2020 +0800
+
+    Update README.md
+
+[33mcommit 4d0f8ba168980d3f27520107cbd3aee3e3122c93[m
+Author: HungYu0812 <albein3402@gmail.com>
+Date:   Wed Nov 25 01:27:10 2020 +0800
+
+    Choose begin and the end of signal
+
+[33mcommit bb94ac8f13ed24106c854666c84e690c0b4aef5b[m
+Merge: c064caf 8e79c5d
+Author: HungYu0812 <albein3402@gmail.com>
+Date:   Mon Nov 23 20:10:28 2020 +0800
+
+    Merge branch 'master' of https://github.com/HungYu0812/SNratio
+
+[33mcommit 8e79c5d0c5d285bc62642248490fa69a1b698acb[m
+Author: HungYu0812 <64835606+HungYu0812@users.noreply.github.com>
+Date:   Mon Nov 23 19:59:29 2020 +0800
+
+    Update README.md
+
+[33mcommit e643496e6931cd34f7b55f70746e127ed5366628[m
+Author: HungYu0812 <64835606+HungYu0812@users.noreply.github.com>
+Date:   Mon Nov 23 19:52:18 2020 +0800
+
+    Update README.md
+
+[33mcommit a86db8750b9016a70902d8baa83f8f41615dc684[m
+Author: HungYu0812 <64835606+HungYu0812@users.noreply.github.com>
+Date:   Mon Nov 23 19:50:42 2020 +0800
+
+    Update README.md
+
+[33mcommit fd7acb31a0d041d8782d1eee340d1f3daa837e86[m
+Author: HungYu0812 <64835606+HungYu0812@users.noreply.github.com>
+Date:   Mon Nov 23 19:50:17 2020 +0800
+
+    Create README.md
+
+[33mcommit c064caf9bf5b54a0553fe6396a26c91c834f10aa[m
+Author: HungYu0812 <albein3402@gmail.com>
+Date:   Mon Nov 23 19:36:22 2020 +0800
+
+    Add test file
+
+[33mcommit 9b046e9e1e1e310b9f415dcf4aaf1fc185303f51[m
+Author: HungYu0812 <albein3402@gmail.com>
+Date:   Mon Nov 23 19:34:19 2020 +0800
+
+    Upload SN ratio
